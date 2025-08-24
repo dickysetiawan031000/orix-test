@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Test Programmer PT ORIX Indonesia Finance 2025
 
-## Getting Started
+Project ini dibuat dengan **Next.js (TypeScript)** untuk menampilkan soal-soal technical test.  
+Setiap soal dapat dikerjakan menggunakan **JavaScript** (dijalankan langsung di browser) dan **PHP** (ditampilkan sebagai kode statis).  
 
-First, run the development server:
+Tujuan project ini:  
+- Menunjukkan kemampuan **JavaScript/TypeScript** di frontend.  
+- Menunjukkan pemahaman dasar **PHP**.  
+- Framework besar seperti **Laravel** dianggap overkill untuk soal ini, sehingga dibuat lebih sederhana namun tetap rapih.  
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Tech Stack
+- [Next.js 15+ (App Router)](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/) untuk styling
+- **PHP snippet** statis (tidak dieksekusi, hanya untuk ditampilkan)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+## Fitur
 
-To learn more about Next.js, take a look at the following resources:
+- **Landing Page:** Menampilkan daftar soal.
+- **Halaman Detail Soal:** Menampilkan detail soal beserta kode yang dapat dijalankan.
+- **Render & Run JS:** Jalankan kode JavaScript langsung di browser.
+- **Render PHP:** Tampilkan kode PHP (hanya untuk viewing, tidak dieksekusi di browser).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Cara Menjalankan
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Clone repository ini:
+   ```bash
+   git clone git@github.com:dickysetiawan031000/orix-test.git
 
-## Deploy on Vercel
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. Install dependencies and run project:
+    ```bash
+   npm Install
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   npm run dev
+   ```
