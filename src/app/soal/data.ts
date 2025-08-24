@@ -128,12 +128,13 @@ printPattern(9);
 console.log(2021, isLeapYear(2021) ? "Tahun kabisat" : "Bukan tahun kabisat");
 console.log(2020, isLeapYear(2020) ? "Tahun kabisat" : "Bukan tahun kabisat");`,
         jsRun: () => {
-            const isLeapYear = (y) =>
+            const isLeapYear = (y: number) =>
                 y % 400 === 0 || (y % 4 === 0 && y % 100 !== 0);
+
             return [
                 `2021 → ${isLeapYear(2021) ? "Tahun kabisat" : "Bukan tahun kabisat"}`,
-                `2020 → ${isLeapYear(2020) ? "Tahun kabisat" : "Bukan tahun kabisat"}`,
-            ].join(" | ");
+                `2020 → ${isLeapYear(2020) ? "Tahun kabisat" : "Bukan tahun kabisat"}`
+            ].join("\n");
         },
         phpCode: `<?php
 function isLeapYear($y) {
@@ -159,8 +160,8 @@ echo "2020 → " . (isLeapYear(2020) ? "Tahun kabisat" : "Bukan tahun kabisat");
 console.log(fibonacci(5).join(" "));
 console.log(fibonacci(10).join(" "));`,
         jsRun: () => {
-            const fib = (n) => {
-                const out = [];
+            const fib = (n: number): number[] => {
+                const out: number[] = [];
                 let a = 0,
                     b = 1;
                 for (let i = 0; i < n; i++) {
@@ -169,8 +170,11 @@ console.log(fibonacci(10).join(" "));`,
                 }
                 return out;
             };
-            return `n=5 → ${fib(5).join(" ")} | n=10 → ${fib(10).join(" ")}`;
+
+            return `n=5 → ${fib(5).join(" ")}\n` +
+                `n=10 → ${fib(10).join(" ")}`;
         },
+
         phpCode: `<?php
 function fibonacci($n){
     $out = [];

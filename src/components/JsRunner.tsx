@@ -2,15 +2,21 @@
 
 import { useState } from "react";
 
-export default function JsRunner({ run }: { run: () => any }) {
+export default function JsRunner({ run }: { run: () => unknown }) {
     const [output, setOutput] = useState<string | null>(null);
     const [show, setShow] = useState(false);
 
     function handleRun() {
         try {
             const result = run();
-            setOutput(Array.isArray(result) ? result.join(", ") : String(result));
-            setShow(true); // tampilkan hasil
+
+            if (Array.isArray(result)) {
+                setOutput(result.join(", "));
+            } else {
+                setOutput(String(result));
+            }
+
+            setShow(true);
         } catch (err: unknown) {
             if (err instanceof Error) {
                 setOutput("Error: " + err.message);
@@ -38,9 +44,9 @@ export default function JsRunner({ run }: { run: () => any }) {
                     >
                         Hide JS
                     </button>
-                    <p className="mt-2 p-2 bg-gray-100 rounded text-gray-800">
+                    <pre className="mt-2 p-2 bg-gray-100 rounded text-gray-800 whitespace-pre-wrap">
                         Hasil: {output}
-                    </p>
+                    </pre>
                 </div>
             )}
         </div>
