@@ -11,8 +11,12 @@ export default function JsRunner({ run }: { run: () => any }) {
             const result = run();
             setOutput(Array.isArray(result) ? result.join(", ") : String(result));
             setShow(true); // tampilkan hasil
-        } catch (err: any) {
-            setOutput("Error: " + err.message);
+        } catch (err: unknown) {
+            if (err instanceof Error) {
+                setOutput("Error: " + err.message);
+            } else {
+                setOutput("Unknown error");
+            }
             setShow(true);
         }
     }
